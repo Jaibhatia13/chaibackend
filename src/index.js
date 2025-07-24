@@ -8,7 +8,16 @@ dotenv.config({
   path: "./env",
 });
 
-connectDB();
+// ye ek async await function hai so hume ek promise bhi return karega humesa
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server is running at port :${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log("Mongo db connection falied: ", err);
+  });
 
 // import express from "express";
 
