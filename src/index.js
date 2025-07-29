@@ -6,7 +6,7 @@ import connectDB from "./db/index.js";
 import { app } from "./app.js";
 
 dotenv.config({
-  path: "./env",
+  path: "./.env",
 });
 
 // ye ek async await function hai so hume ek promise bhi return karega humesa
